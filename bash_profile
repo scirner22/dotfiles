@@ -1,5 +1,5 @@
 export EDITOR=vim
 
-[ -f ~/.bash_ps1     ] && . ~/.bash_ps1
+[ -f ~/.bash_ps_custom     ] && . ~/.bash_ps_custom
 
 cd /opt/code
