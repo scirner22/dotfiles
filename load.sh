@@ -18,8 +18,10 @@ scp $current_dir/tmux.conf core:~/.tmux.conf
 printf "\ncopying aws utilities...\n"
 scp $current_dir/get-role-token core:~/get-role-token
 ssh core sudo ln -sf ~/get-role-token /usr/local/bin/get-role-token
+ssh core sudo chmod 0755 ~/get-role-token
 scp $current_dir/aws-assume-role.sh core:~/aws-assume-role.sh
 ssh core sudo ln -sf ~/aws-assume-role.sh /usr/local/bin/aws-assume-role.sh
+ssh core sudo chmod 0755 ~/aws-assume-role.sh
 
 printf "\nperform boxcutter specific actions...\n"
 ssh core touch brown_m_and_ms
