@@ -1,5 +1,5 @@
 ### dotfiles
-Holds the default configuration I add after 'upping' a fresh vm at RJMetrics.
+Holds the default configuration I add after cooking a fresh vm at RJMetrics.
 
 ### Usage
 ```

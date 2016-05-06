@@ -22,6 +22,8 @@ ssh core 'sudo chmod 0755 ~/get-role-token'
 scp $current_dir/aws-assume-role.sh core:~/aws-assume-role.sh
 ssh core 'sudo ln -sf ~/aws-assume-role.sh /usr/local/bin/aws-assume-role.sh'
 ssh core 'sudo chmod 0755 ~/aws-assume-role.sh'
+ssh core 'mkdir ~/.aws'
+scp ~/.aws/credentials core:~/.aws/credentials
 
 printf "\nperform boxcutter specific actions...\n"
 ssh core touch brown_m_and_ms
