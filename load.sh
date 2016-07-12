@@ -25,6 +25,17 @@ ssh core 'sudo chmod 0755 ~/aws-assume-role.sh'
 ssh core 'mkdir ~/.aws'
 scp ~/.aws/credentials core:~/.aws/credentials
 
+printf "\ncopying vim config...\n"
+ssh core 'mkdir -p ~/.vim/autoload ~/.vim/bundle'
+ssh core 'curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
+ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-sensible.git'
+ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-salve.git'
+ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fireplace.git'
+ssh core 'cd ~/.vim/bundle && git clone git://github.com/guns/vim-clojure-static.git'
+ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-classpath.git'
+ssh core 'cd ~/.vim/bundle && git clone git://github.com/kien/ctrlp.vim.git'
+scp $current_dir/vimrc core:~/.vimrc
+
 printf "\nperform boxcutter specific actions...\n"
 ssh core touch brown_m_and_ms
 ssh core /opt/code/data-warehouse-service/bin/create_serve_01.bash
