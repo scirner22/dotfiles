@@ -34,6 +34,7 @@ ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fireplace.git
 ssh core 'cd ~/.vim/bundle && git clone git://github.com/guns/vim-clojure-static.git'
 ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-classpath.git'
 ssh core 'cd ~/.vim/bundle && git clone git://github.com/kien/ctrlp.vim.git'
+ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fugitive.git'
 scp $current_dir/vimrc core:~/.vimrc
 
 printf "\nperform boxcutter specific actions...\n"
