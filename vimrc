@@ -14,11 +14,15 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-:set number
-
 map <C-d> :NERDTreeToggle<CR>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+:set relativenumber
+:au FocusGained * :set relativenumber
+autocmd InsertLeave * :set relativenumber
+:au FocusLost * :set number
+autocmd InsertEnter * :set number
