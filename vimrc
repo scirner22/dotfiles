@@ -15,3 +15,5 @@ if executable('ag')
 endif
 
 :set number
+
+map <C-d> :NERDTreeToggle<CR>
