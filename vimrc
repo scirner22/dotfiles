@@ -2,6 +2,8 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+colorscheme desert
+
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
