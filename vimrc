@@ -28,3 +28,5 @@ nnoremap <C-H> <C-W><C-H>
 autocmd InsertLeave * :set relativenumber
 :au FocusLost * :set number
 autocmd InsertEnter * :set number
+
+set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
