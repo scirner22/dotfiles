@@ -30,3 +30,6 @@ autocmd InsertLeave * :set relativenumber
 autocmd InsertEnter * :set number
 
 set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+
+highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+set colorcolumn=80
