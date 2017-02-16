@@ -1,0 +1,7 @@
+Host echo
+  Hostname echo.rjmetrics.com
+  User scirner
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ForwardAgent yes

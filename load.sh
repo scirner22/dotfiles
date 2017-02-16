@@ -14,6 +14,7 @@ scp $current_dir/bash_aliases core:~/.bash_aliases
 scp $current_dir/bash_profile core:~/.bash_profile
 scp $current_dir/bash_ps_custom core:~/.bash_ps_custom
 scp $current_dir/tmux.conf core:~/.tmux.conf
+scp $current_dir/ssh_config core:~/.ssh/config
 
 printf "\ncopying aws utilities...\n"
 scp $current_dir/get-role-token core:~/get-role-token
@@ -40,8 +41,3 @@ ssh core 'cd ~/.vim/bundle && git clone git://github.com/vim-airline/vim-airline
 ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-surround.git'
 ssh core 'cd ~/.vim/bundle && git clone https://github.com/vim-scripts/paredit.vim'
 scp $current_dir/vimrc core:~/.vimrc
-
-printf "\nperform boxcutter specific actions...\n"
-ssh core touch brown_m_and_ms
-ssh core /opt/code/data-warehouse-service/bin/create_serve_01.bash
-ssh core php /opt/code/RJMetrics/Replication/src/replication/TaskRunner.php create-infrastructure 2
