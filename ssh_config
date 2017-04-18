@@ -5,3 +5,15 @@ Host echo
   StrictHostKeyChecking no
   PasswordAuthentication no
   ForwardAgent yes
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+
+Host echo2
+  Hostname 52.201.240.114
+  User scirner
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ForwardAgent yes
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
