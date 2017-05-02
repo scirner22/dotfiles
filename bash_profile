@@ -8,5 +8,3 @@ alias ls='ls $LS_OPTIONS'
 cd /opt/code
 
 PATH=$PATH:/home/vagrant:/home/vagrant/bin
-
-source ~/aws-assume-role.sh
