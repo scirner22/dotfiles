@@ -6,9 +6,6 @@ printf "\ncopying config to core vm at $core_dir\n"
 
 cd $core_dir
 
-printf "copying gpg config.."
-rsync -avP ~/.gnupg core:
-
 printf "\ncopying bash env config...\n"
 scp $current_dir/bash_aliases core:~/.bash_aliases
 scp $current_dir/bash_profile core:~/.bash_profile
