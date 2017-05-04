@@ -41,7 +41,7 @@ ps1_git() {
 
 ps1_update() {
     [[ "$VIRTUAL_ENV" ]] && local env="($(basename $VIRTUAL_ENV))"
-    PS1="$env\[$GREEN\]\u@\H \[$BLUE\]\w$(ps1_git)\n  \[$BLUE\]\\\$ \[$WHITE\]"
+    PS1="$env\[$GREEN\]\u@\H \[$BLUE\]\w$(ps1_git)\[$YELLOW\]$(aws-prompt)\n  \[$BLUE\]\\\$ \[$WHITE\]"
 }
 
 export PROMPT_COMMAND="ps1_update"
