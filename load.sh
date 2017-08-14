@@ -1,35 +1,34 @@
 #!/bin/bash
 
 current_dir=$(pwd)
-core_dir=$1
-printf "\ncopying config to core vm at $core_dir\n"
+#core_dir=$1
+printf "\ncopying config\n"
 
-cd $core_dir
+#cd $core_dir
 
 printf "\ncopying bash env config...\n"
-scp $current_dir/bash_aliases core:~/.bash_aliases
-scp $current_dir/bash_profile core:~/.bash_profile
-scp $current_dir/bash_ps_custom core:~/.bash_ps_custom
-scp $current_dir/tmux.conf core:~/.tmux.conf
-scp $current_dir/ssh_config core:~/.ssh/config
+cp $current_dir/bash_aliases ~/.bash_aliases
+cp $current_dir/bash_profile ~/.bash_profile
+cp $current_dir/bash_ps_custom ~/.bash_ps_custom
+cp $current_dir/tmux.conf ~/.tmux.conf
+cp $current_dir/ssh_config ~/.ssh/config
 
-printf "\ncopying aws utilities...\n"
-ssh core 'mkdir ~/.aws'
-scp ~/.aws/credentials core:~/.aws/credentials
+#printf "\ncopying aws utilities...\n"
+#ssh core 'mkdir ~/.aws'
+#scp ~/.aws/credentials core:~/.aws/credentials
 
 printf "\ncopying vim config...\n"
-ssh core 'mkdir -p ~/.vim/autoload ~/.vim/bundle'
-ssh core 'curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-sensible.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-salve.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fireplace.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/guns/vim-clojure-static.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-classpath.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/kien/ctrlp.vim.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fugitive.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/scrooloose/nerdtree.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/vim-airline/vim-airline'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-surround.git'
-ssh core 'cd ~/.vim/bundle && git clone git://github.com/kchmck/vim-coffee-script.git'
-ssh core 'cd ~/.vim/bundle && git clone https://github.com/vim-scripts/paredit.vim'
-scp $current_dir/vimrc core:~/.vimrc
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+cd ~/.vim/bundle && git clone git://github.com/tpope/vim-sensible.git
+#ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-salve.git
+#ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fireplace.git'
+#ssh core 'cd ~/.vim/bundle && git clone git://github.com/guns/vim-clojure-static.git'
+#ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-classpath.git'
+cd ~/.vim/bundle && git clone git://github.com/kien/ctrlp.vim.git
+cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fugitive.git
+cd ~/.vim/bundle && git clone git://github.com/scrooloose/nerdtree.git
+cd ~/.vim/bundle && git clone git://github.com/vim-airline/vim-airline
+cd ~/.vim/bundle && git clone git://github.com/tpope/vim-surround.git
+cd ~/.vim/bundle && git clone https://github.com/vim-scripts/paredit.vim
+cp $current_dir/vimrc ~/.vimrc

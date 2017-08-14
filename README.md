@@ -1,7 +1,7 @@
 ### dotfiles
-Holds the default configuration I add after cooking a fresh vm at RJMetrics.
+Holds the default configuration I add for my Blackfynn development environment.
 
 ### Usage
 ```
-bash load.sh ../boxcutter/
+bash load.sh
 ```

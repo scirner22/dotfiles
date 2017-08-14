@@ -1,10 +1,11 @@
 export EDITOR=vim
-export LS_OPTIONS='--color=auto'
-eval "`dircolors`"
-alias ls='ls $LS_OPTIONS'
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-[ -f ~/.bash_ps_custom     ] && . ~/.bash_ps_custom
+[ -f ~/.bash_ps_custom ] && . ~/.bash_ps_custom
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.blackfynnrc ] && . ~/.blackfynnrc
 
-cd /opt/code
+PATH=$PATH:/usr/local/etc
 
-PATH=$PATH:/home/vagrant:/home/vagrant/bin
+cd ~/Documents/blackfynn
