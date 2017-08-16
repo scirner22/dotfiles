@@ -32,3 +32,5 @@ autocmd InsertEnter * :set number
 set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 
 let g:paredit_leader = ','
+
+let g:ctrlp_custom_ignore = '\v[\/](target)$'
