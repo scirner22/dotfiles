@@ -2,13 +2,14 @@
 
 current_dir=$(pwd)
 
-printf "\ncopying bash env config...\n"
-[ -h ~/.bash_aliases ] && ln -s $current_dir/bash_aliases ~/.bash_aliases
-[ -h ~/.bash_profile ] && ln -s $current_dir/bash_profile ~/.bash_profile
-[ -h ~/.bash_ps_custom ] && ln -s $current_dir/bash_ps_custom ~/.bash_ps_custom
-[ -h ~/.tmux.conf ] && ln -s $current_dir/tmux.conf ~/.tmux.conf
-[ -h ~/.ssh/config ] && ln -s $current_dir/ssh_config ~/.ssh/config
-[ -h ~/.vimrc ] && ln -s $current_dir/vimrc ~/.vimrc
+printf "\nlinking bash env config...\n"
+[ -h ~/.bash_aliases ] || ln -s $current_dir/bash_aliases ~/.bash_aliases
+[ -h ~/.bash_profile ] || ln -s $current_dir/bash_profile ~/.bash_profile
+[ -h ~/.bash_ps_custom ] || ln -s $current_dir/bash_ps_custom ~/.bash_ps_custom
+[ -h ~/.tmux.conf ] || ln -s $current_dir/tmux.conf ~/.tmux.conf
+[ -h ~/.ssh/config ] || ln -s $current_dir/ssh_config ~/.ssh/config
+[ -h ~/.vimrc ] || ln -s $current_dir/vimrc ~/.vimrc
+[ -h ~/.gitconfig ] || ln -s $current_dir/gitconfig ~/.gitconfig
 
 #printf "\ncopying aws utilities...\n"
 #ssh core 'mkdir ~/.aws'
