@@ -2,8 +2,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-colorscheme desert
-
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -34,3 +32,12 @@ set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 let g:paredit_leader = ','
 
 let g:ctrlp_custom_ignore = '\v[\/](target)$'
+
+" eclim integration
+set nocompatible
+
+" aliases
+cnoreabbrev ssi SortScalaImports
+
+" save commands
+autocmd BufWritePost *.scala SortScalaImports
