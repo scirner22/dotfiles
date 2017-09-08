@@ -39,5 +39,6 @@ set nocompatible
 " aliases
 cnoreabbrev ssi SortScalaImports
 
-" save commands
-autocmd BufWritePost *.scala SortScalaImports
+" show wrap line
+set colorcolumn=100
+highlight ColorColumn ctermbg=8

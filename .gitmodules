@@ -1,0 +1,21 @@
+[submodule "vim/plugins/general/vim-sensible"]
+	path = vim/plugins/general/vim-sensible
+	url = git://github.com/tpope/vim-sensible.git
+[submodule "vim/plugins/general/ctrlp"]
+	path = vim/plugins/general/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/plugins/general/vim-fugitive"]
+	path = vim/plugins/general/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/plugins/general/nerdtree"]
+	path = vim/plugins/general/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/plugins/general/vim-airline"]
+	path = vim/plugins/general/vim-airline
+	url = git://github.com/vim-airline/vim-airline
+[submodule "vim/plugins/general/vim-surround"]
+	path = vim/plugins/general/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/plugins/scala/vim-scala"]
+	path = vim/plugins/scala/vim-scala
+	url = git@github.com:derekwyatt/vim-scala.git
