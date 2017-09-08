@@ -19,3 +19,6 @@
 [submodule "vim/plugins/scala/vim-scala"]
 	path = vim/plugins/scala/vim-scala
 	url = git@github.com:derekwyatt/vim-scala.git
+[submodule "vim/plugins/scala/syntastic"]
+	path = vim/plugins/scala/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git

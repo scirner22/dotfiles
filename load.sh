@@ -27,7 +27,7 @@ for general in vim/plugins/general/*/
 do
   temp=${general%*/}
   plugin=${temp##*/}
-  [ -h ~/.vim/bundle/$plugin ] || ln -s vim/plugins/general/$plugin ~/.vim/bundle/$plugin
+  [ -h ~/.vim/bundle/$plugin ] || ln -s $current_dir/vim/plugins/general/$plugin ~/.vim/bundle/$plugin
 done
 
 # scala plugins
@@ -35,7 +35,7 @@ for scala in vim/plugins/scala/*/
 do
   temp=${scala%*/}
   plugin=${temp##*/}
-  [ -h ~/.vim/bundle/$plugin ] || ln -s vim/plugins/scala/$plugin ~/.vim/bundle/$plugin
+  [ -h ~/.vim/bundle/$plugin ] || ln -s $current_dir/vim/plugins/scala/$plugin ~/.vim/bundle/$plugin
 done
 
 # clojure plugins
