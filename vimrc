@@ -42,3 +42,5 @@ cnoreabbrev ssi SortScalaImports
 " show wrap line
 set colorcolumn=100
 highlight ColorColumn ctermbg=8
+
+" ensime config

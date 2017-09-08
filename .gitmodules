@@ -22,3 +22,6 @@
 [submodule "vim/plugins/scala/syntastic"]
 	path = vim/plugins/scala/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "vim/plugins/scala/ensime-vim"]
+	path = vim/plugins/scala/ensime-vim
+	url = https://github.com/ensime/ensime-vim
