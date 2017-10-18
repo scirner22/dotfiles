@@ -25,3 +25,6 @@
 [submodule "vim/plugins/scala/ensime-vim"]
 	path = vim/plugins/scala/ensime-vim
 	url = https://github.com/ensime/ensime-vim
+[submodule "vim/plugins/nginx/nginx.vim"]
+	path = vim/plugins/nginx/nginx.vim
+	url = https://github.com/chr4/nginx.vim

@@ -38,6 +38,14 @@ do
   [ -h ~/.vim/bundle/$plugin ] || ln -s $current_dir/vim/plugins/scala/$plugin ~/.vim/bundle/$plugin
 done
 
+# nginx plugins
+for nginx in vim/plugins/nginx/*/
+do
+  temp=${nginx%*/}
+  plugin=${temp##*/}
+  [ -h ~/.vim/bundle/$plugin ] || ln -s $current_dir/vim/plugins/nginx/$plugin ~/.vim/bundle/$plugin
+done
+
 # clojure plugins
 # #ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-salve.git
 # #ssh core 'cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fireplace.git'
