@@ -37,6 +37,9 @@ let g:ctrlp_custom_ignore = '\v[\/](target)$'
 " eclim integration
 set nocompatible
 
+" general config
+set hlsearch
+
 " aliases
 cnoreabbrev ssi SortScalaImports
 

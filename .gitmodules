@@ -28,3 +28,18 @@
 [submodule "vim/plugins/nginx/nginx.vim"]
 	path = vim/plugins/nginx/nginx.vim
 	url = https://github.com/chr4/nginx.vim
+[submodule "vim/plugins/general/vim-gitgutter"]
+	path = vim/plugins/general/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/plugins/clojure/vim-salve"]
+	path = vim/plugins/clojure/vim-salve
+	url = git://github.com/tpope/vim-salve.git
+[submodule "vim/plugins/clojure/vim-fireplace"]
+	path = vim/plugins/clojure/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
+[submodule "vim/plugins/clojure/vim-clojure-static"]
+	path = vim/plugins/clojure/vim-clojure-static
+	url = git://github.com/guns/vim-clojure-static.git
+[submodule "vim/plugins/clojure/paredit.vim"]
+	path = vim/plugins/clojure/paredit.vim
+	url = https://github.com/vim-scripts/paredit.vim
