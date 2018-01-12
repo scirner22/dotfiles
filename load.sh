@@ -20,6 +20,9 @@ printf "\ncopying vim config..."
 [ -d ~/.vim/bundle ] || mkdir -p ~/.vim/bundle
 [ -f ~/.vim/autoload/pathogen.vim ] || curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+#curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	    #https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 ## TODO pass params in that control installed folders below
 
 # general plugins
