@@ -32,3 +32,23 @@ Host agent-ci
   ForwardAgent yes
   ServerAliveInterval 30
   ServerAliveCountMax 3
+
+Host bastion
+  Hostname ec2-54-152-45-104.compute-1.amazonaws.com
+  User blackfynn
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ForwardAgent yes
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+
+Host dev-bastion
+  Hostname 34.238.136.70
+  User scirner
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ForwardAgent yes
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
