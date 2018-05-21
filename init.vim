@@ -10,7 +10,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 Plug 'flazz/vim-colorschemes'
 
-Plug 'rust-lang/rust.vim'
+" TODO move back to official rust.vim once this pull request is merged
+" https://github.com/rust-lang/rust.vim/pull/204
+Plug 'https://github.com/popravich/rust.vim.git', { 'branch': 'fix_syntastic_issue' }
+Plug 'racer-rust/vim-racer'
 Plug 'timonv/vim-cargo'
 
 Plug 'tpope/vim-fireplace'
@@ -44,6 +47,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:syntastic_rust_checkers = ['cargo']
+
+set hidden
+let g:racer_cmd = "/Users/stephencirner/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+set completeopt-=preview
 
 set updatetime=250
 
