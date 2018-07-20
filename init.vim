@@ -21,12 +21,19 @@ Plug 'tpope/vim-salve'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 
+Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'derekwyatt/vim-scala'
+
 call plug#end()
 
 set t_Co=256
 syntax on
 colorscheme molokai
 filetype plugin indent on
+
+let g:python_host_prog='/usr/local/bin/python3'
+let g:python3_host_prog='/usr/local/bin/python3'
+let g:loaded_python_provider=1
 
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -73,3 +80,7 @@ let g:paredit_leader = ','
 
 set colorcolumn=101
 highlight ColorColumn ctermbg=8
+
+autocmd BufWritePost *.scala silent :EnTypeCheck
+au FileType scala nnoremap <localleader>t :EnType<CR>
+au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
