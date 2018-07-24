@@ -12,17 +12,18 @@ Plug 'flazz/vim-colorschemes'
 
 " TODO move back to official rust.vim once this pull request is merged
 " https://github.com/rust-lang/rust.vim/pull/204
-Plug 'https://github.com/popravich/rust.vim.git', { 'branch': 'fix_syntastic_issue' }
-Plug 'racer-rust/vim-racer'
-Plug 'timonv/vim-cargo'
+"TODO add back to master branch
+"Plug 'https://github.com/popravich/rust.vim.git', { 'branch': 'fix_syntastic_issue' }
+"Plug 'racer-rust/vim-racer'
+"Plug 'timonv/vim-cargo'
 
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 
-Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
-Plug 'derekwyatt/vim-scala'
+"Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'derekwyatt/vim-scala'
 
 call plug#end()
 

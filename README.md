@@ -1,13 +1,7 @@
 ### dotfiles
-Holds the default configuration I add for my Blackfynn development environment.
-
-### adding vim plugins
-From inside the local path:
-```
-git submodule add <github path>
-```
+Holds the default configuration to spin up my development environment.
 
 ### Usage
 ```
-bash load.sh
+sh load.sh
 ```
