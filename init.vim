@@ -8,7 +8,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
-Plug 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
+
+Plug 'davidhalter/jedi-vim'
 
 " TODO move back to official rust.vim once this pull request is merged
 " https://github.com/rust-lang/rust.vim/pull/204
@@ -29,7 +31,7 @@ call plug#end()
 
 set t_Co=256
 syntax on
-colorscheme molokai
+"colorscheme molokai
 filetype plugin indent on
 
 let g:python_host_prog='/usr/local/bin/python3'
