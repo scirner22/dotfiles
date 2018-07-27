@@ -1,1 +1,1 @@
-alias codedir='cd ~/Documents/crossbeam'
+alias c='cd ~/Documents/code'
