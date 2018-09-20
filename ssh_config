@@ -2,12 +2,23 @@ Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
 
-Host ops-bastion
-  Hostname ops-inf-ssh-use1.blackfynn.io
-  User scirner
+Host crossbeam-bastion
+  Hostname 34.230.99.222
+  User ubuntu
   Port 22
   StrictHostKeyChecking no
   PasswordAuthentication no
   ForwardAgent yes
   ServerAliveInterval 30
   ServerAliveCountMax 3
+
+Host crossbeam-jenkins
+  Hostname 172.31.7.47
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ForwardAgent yes
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  ProxyCommand ssh crossbeam-bastion nc %h %p

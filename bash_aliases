@@ -1,1 +1,6 @@
 alias c='cd ~/Documents/code'
+alias ls='ls --color'
+alias deploy='./bin/build && ./bin/restart'
+alias helm='./bin/helm'
+alias ks='./bin/ks'
+alias terraform='./bin/terraform'

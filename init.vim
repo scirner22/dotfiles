@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+" general
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -8,22 +9,38 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
-"Plug 'flazz/vim-colorschemes'
+Plug 'neomake/neomake'
 
+" jsonnet
+Plug 'google/vim-jsonnet'
+
+" terraform
+Plug 'hashivim/vim-terraform'
+
+" javascript
+Plug 'posva/vim-vue'
+Plug 'isRuslan/vim-es6'
+
+" ?
 Plug 'davidhalter/jedi-vim'
 
+" rust
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 " TODO move back to official rust.vim once this pull request is merged
 " https://github.com/rust-lang/rust.vim/pull/204
 "TODO add back to master branch
+" rust
 "Plug 'https://github.com/popravich/rust.vim.git', { 'branch': 'fix_syntastic_issue' }
 "Plug 'racer-rust/vim-racer'
 "Plug 'timonv/vim-cargo'
 
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
+" clojure
+"Plug 'tpope/vim-fireplace'
+"Plug 'tpope/vim-salve'
+"Plug 'guns/vim-clojure-static'
+"Plug 'guns/vim-clojure-highlight'
 
+" scala
 "Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'derekwyatt/vim-scala'
 
@@ -34,8 +51,8 @@ syntax on
 "colorscheme molokai
 filetype plugin indent on
 
-let g:python_host_prog='/usr/local/bin/python3'
-let g:python3_host_prog='/usr/local/bin/python3'
+let g:python_host_prog='/usr/bin/python3'
+let g:python3_host_prog='/usr/bin/python3'
 let g:loaded_python_provider=1
 
 let g:ctrlp_map = '<c-f>'
@@ -56,12 +73,19 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:syntastic_rust_checkers = ['cargo']
-
+autocmd BufReadPost *.rs setlocal filetype=rust
 set hidden
-let g:racer_cmd = "/Users/stephencirner/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-set completeopt-=preview
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> K :call LanguageClient_textDocument_hover()
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()
+"let g:syntastic_rust_checkers = ['cargo']
+" let g:racer_cmd = "/Users/stephencirner/.cargo/bin/racer"
+" let g:racer_experimental_completer = 1
+" set completeopt-=preview
 
 set updatetime=250
 
@@ -87,3 +111,5 @@ highlight ColorColumn ctermbg=8
 autocmd BufWritePost *.scala silent :EnTypeCheck
 au FileType scala nnoremap <localleader>t :EnType<CR>
 au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
+
+call neomake#configure#automake('nw', 750)
