@@ -7,6 +7,8 @@ export GOPATH=${HOME}/go
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 
+export CROSSBEAM_CODE_DIR=${HOME}/Documents/code
+
 #[ -f ~/.bash_ps_custom ] && . ~/.bash_ps_custom
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.bash_secrets ] && . ~/.bash_secrets
@@ -14,3 +16,7 @@ export PATH=$PATH:/usr/local/go/bin
 [ -f ~/.bash-git-prompt/gitprompt.sh ] && . ~/.bash-git-prompt/gitprompt.sh
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

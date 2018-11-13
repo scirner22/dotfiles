@@ -10,9 +10,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 Plug 'neomake/neomake'
-
-" jsonnet
-Plug 'google/vim-jsonnet'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " terraform
 Plug 'hashivim/vim-terraform'
@@ -21,11 +19,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'posva/vim-vue'
 Plug 'isRuslan/vim-es6'
 
-" ?
-Plug 'davidhalter/jedi-vim'
-
 " rust
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 " TODO move back to official rust.vim once this pull request is merged
 " https://github.com/rust-lang/rust.vim/pull/204
 "TODO add back to master branch
@@ -35,14 +30,14 @@ Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'timonv/vim-cargo'
 
 " clojure
-"Plug 'tpope/vim-fireplace'
-"Plug 'tpope/vim-salve'
-"Plug 'guns/vim-clojure-static'
-"Plug 'guns/vim-clojure-highlight'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
 
-" scala
-"Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'derekwyatt/vim-scala'
+" python
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-scripts/indentpython.vim'
 
 call plug#end()
 
@@ -51,14 +46,12 @@ syntax on
 "colorscheme molokai
 filetype plugin indent on
 
-let g:python_host_prog='/usr/bin/python3'
-let g:python3_host_prog='/usr/bin/python3'
-let g:loaded_python_provider=1
+" let g:deoplete#enable_at_startup = 1
 
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](target)$'
 if executable('ag')
@@ -108,8 +101,6 @@ let g:paredit_leader = ','
 set colorcolumn=101
 highlight ColorColumn ctermbg=8
 
-autocmd BufWritePost *.scala silent :EnTypeCheck
-au FileType scala nnoremap <localleader>t :EnType<CR>
-au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
-
 call neomake#configure#automake('nw', 750)
+
+" python

@@ -3,7 +3,7 @@ Host *
   IdentityFile ~/.ssh/id_rsa
 
 Host crossbeam-bastion
-  Hostname 34.230.99.222
+  Hostname bastion.getcrossbeam.com
   User ubuntu
   Port 22
   StrictHostKeyChecking no
@@ -13,7 +13,7 @@ Host crossbeam-bastion
   ServerAliveCountMax 3
 
 Host crossbeam-jenkins
-  Hostname 172.31.7.47
+  Hostname jenkins.internal.getcrossbeam.com
   User ubuntu
   Port 22
   StrictHostKeyChecking no
