@@ -34,16 +34,21 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
+Plug 'luochen1990/rainbow'
+Plug 'gberenfield/cljfold.vim'
+Plug 'vim-scripts/paredit.vim'
 
 " python
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-scripts/indentpython.vim'
 
+" development plugins
+Plug 'file:///home/stevecirner/Documents/code/oxidize-clj'
+
 call plug#end()
 
 set t_Co=256
 syntax on
-"colorscheme molokai
 filetype plugin indent on
 
 " let g:deoplete#enable_at_startup = 1
@@ -96,11 +101,16 @@ set hlsearch
 
 set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 
-let g:paredit_leader = ','
-
 set colorcolumn=101
 highlight ColorColumn ctermbg=8
 
 call neomake#configure#automake('nw', 750)
 
+" clojure
+let g:paredit_leader = ','
+let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,defrecord,ns"
+
 " python
+
+" docker
+:set backupcopy=yes

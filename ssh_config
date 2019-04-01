@@ -4,6 +4,16 @@ Host *
 
 Host crossbeam-bastion
   Hostname bastion.getcrossbeam.com
+  User steve
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ForwardAgent yes
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+
+Host crossbeam-bastion-root
+  Hostname bastion.getcrossbeam.com
   User ubuntu
   Port 22
   StrictHostKeyChecking no
@@ -21,4 +31,18 @@ Host crossbeam-jenkins
   ForwardAgent yes
   ServerAliveInterval 30
   ServerAliveCountMax 3
-  ProxyCommand ssh crossbeam-bastion nc %h %p
+  ProxyCommand ssh crossbeam-bastion-root nc %h %p
+
+Host ansible-bastion-connection
+  HostName bastion.getcrossbeam.com
+  User ubuntu
+  Port 22
+  ForwardAgent yes
+  ControlMaster auto
+  ControlPath ~/.ansible/cp/ansible-ssh-%h-%p-%r
+  ControlPersist 10m
+  IdentityFile ~/.ssh/id_rsa
+
+Host ansible-bastion-connection-reuse
+  ProxyCommand ssh ansible-bastion-connection nc %h %p
+  IdentityFile ~/.ssh/id_rsa
