@@ -35,8 +35,8 @@ Plug 'tpope/vim-salve'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'luochen1990/rainbow'
-Plug 'gberenfield/cljfold.vim'
 Plug 'vim-scripts/paredit.vim'
+" Plug 'venantius/vim-eastwood'
 
 " python
 Plug 'davidhalter/jedi-vim'
@@ -107,8 +107,10 @@ highlight ColorColumn ctermbg=8
 call neomake#configure#automake('nw', 750)
 
 " clojure
+let g:syntastic_clojure_checkers = ['eastwood']
 let g:paredit_leader = ','
 let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,defrecord,ns"
+let g:rainbow_active = 1
 
 " python
 

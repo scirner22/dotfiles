@@ -33,6 +33,17 @@ Host crossbeam-jenkins
   ServerAliveCountMax 3
   ProxyCommand ssh crossbeam-bastion-root nc %h %p
 
+Host crossbeam-haproxy
+  Hostname haproxy.internal.getcrossbeam.com
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ForwardAgent yes
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  ProxyCommand ssh crossbeam-bastion nc %h %p
+
 Host ansible-bastion-connection
   HostName bastion.getcrossbeam.com
   User ubuntu

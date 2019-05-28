@@ -1,7 +1,5 @@
 [user]
 name = Stephen Cirner
 email = scirner@getcrossbeam.com
-[branch]
-	autosetupmerge = always
 [push]
 	default = simple
