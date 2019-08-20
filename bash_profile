@@ -10,6 +10,7 @@ export PATH=$PATH:/usr/local/go/bin
 export CROSSBEAM_CODE_DIR=${HOME}/Documents/code
 export CROSSBEAM_PUBKEY_NAME=stevecirner@stevecirner-system76
 export CROSSBEAM_PUBKEY_FILE=~/.ssh/id_rsa.pub
+export CROSSBEAM_DEV_AUTH0_ID='google-oauth2|112493139891641366086'
 
 export PATH="$CROSSBEAM_CODE_DIR/devops/bin:$PATH"
 export PATH=$PATH:~/.lein/bin

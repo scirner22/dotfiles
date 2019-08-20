@@ -43,7 +43,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'vim-scripts/indentpython.vim'
 
 " development plugins
-Plug 'file:///home/stevecirner/Documents/code/oxidize-clj'
+" Plug 'file:///home/stevecirner/Documents/code/oxidize-clj'
 
 call plug#end()
 
