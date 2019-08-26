@@ -1,2 +1,2 @@
-alias c='cd ~/Documents/code'
-alias ls='ls --color'
+alias c='cd ~/figure/code'
+alias ls='ls -G'

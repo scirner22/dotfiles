@@ -1,19 +1,13 @@
 export EDITOR=nvim
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-export RUST_SRC_PATH=${HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 
 export GOPATH=${HOME}/go
 
+export FIGURE_HOME_DIR=${HOME}/figure
+export FIGURE_CODE_DIR=${FIGURE_HOME_DIR}/code
+
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
-
-export CROSSBEAM_CODE_DIR=${HOME}/Documents/code
-export CROSSBEAM_PUBKEY_NAME=stevecirner@stevecirner-system76
-export CROSSBEAM_PUBKEY_FILE=~/.ssh/id_rsa.pub
-export CROSSBEAM_DEV_AUTH0_ID='google-oauth2|112493139891641366086'
-
-export PATH="$CROSSBEAM_CODE_DIR/devops/bin:$PATH"
-export PATH=$PATH:~/.lein/bin
 
 #[ -f ~/.bash_ps_custom ] && . ~/.bash_ps_custom
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
@@ -21,8 +15,15 @@ export PATH=$PATH:~/.lein/bin
 [ -f ~/.bash_tokens ] && . ~/.bash_tokens
 [ -f ~/.bash-git-prompt/gitprompt.sh ] && . ~/.bash-git-prompt/gitprompt.sh
 
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.pyenv/bin:$PATH"
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  GIT_PROMPT_ONLY_IN_REPO=1
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  source <(kubectl completion bash)
+  source $(brew --prefix)/etc/bash_completion
+fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

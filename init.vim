@@ -15,6 +15,9 @@ Plug 'neomake/neomake'
 " terraform
 Plug 'hashivim/vim-terraform'
 
+" kotlin
+Plug 'udalov/kotlin-vim'
+
 " javascript
 Plug 'posva/vim-vue'
 Plug 'isRuslan/vim-es6'
@@ -116,3 +119,6 @@ let g:rainbow_active = 1
 
 " docker
 :set backupcopy=yes
+
+" TODO
+" non edit mode is showing relative line numbers instead of absolute

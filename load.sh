@@ -11,6 +11,7 @@ printf "linking bash env config..."
 [ -h ~/.config/nvim/init.vim ] || (mkdir -p ~/.config/nvim && ln -s $current_dir/init.vim ~/.config/nvim/init.vim)
 [ -h ~/.gitconfig ] || ln -s $current_dir/gitconfig ~/.gitconfig
 [ -h ~/.config/tmuxinator/crossbeam.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/crossbeam.yml ~/.config/tmuxinator/crossbeam.yml)
+[ -h ~/.config/tmuxinator/figure.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/figure.yml ~/.config/tmuxinator/figure.yml)
 
 [ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
