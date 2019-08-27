@@ -5,9 +5,11 @@ export GOPATH=${HOME}/go
 
 export FIGURE_HOME_DIR=${HOME}/figure
 export FIGURE_CODE_DIR=${FIGURE_HOME_DIR}/code
+export FIGURE_DEV_DIR=${FIGURE_CODE_DIR}/dev-utils
 
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$FIGURE_DEV_DIR/bin
 
 #[ -f ~/.bash_ps_custom ] && . ~/.bash_ps_custom
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
