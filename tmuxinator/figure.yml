@@ -11,7 +11,7 @@ root: ~/
 
 # Project hooks
 # Runs on project start, always
-# on_project_start: command
+on_project_start: ssh-add -K ~/.ssh/id_rsa
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
@@ -19,7 +19,7 @@ root: ~/
 # Run on project exit ( detaching from tmux session )
 # on_project_exit: command
 # Run on project stop
-# on_project_stop: command
+on_project_stop: cd ~/figure/code/dev-compose && docker-compose down
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -70,3 +70,7 @@ windows:
           - cd ~/figure/code
         - logs:
           - cd ~/figure/code
+  - startup:
+    - cd ~/figure/code/dev-compose
+    - git pull
+    - docker-compose up -d
