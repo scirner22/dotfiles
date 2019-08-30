@@ -1,5 +1,8 @@
 " experimenting with ideavim plugin due to intellij and kotlin being so tightly coupled
 
+:set relativenumber
+:set hlsearch
+
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
