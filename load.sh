@@ -8,6 +8,7 @@ printf "linking bash env config..."
 [ -h ~/.bash_ps_custom ] || ln -s $current_dir/bash_ps_custom ~/.bash_ps_custom
 [ -h ~/.tmux.conf ] || ln -s $current_dir/tmux.conf ~/.tmux.conf
 [ -h ~/.ssh/config ] || ln -s $current_dir/ssh_config ~/.ssh/config
+[ -h ~/.ideavimrc ] || ln -s $current_dir/ideavimrc ~/.ideavimrc
 [ -h ~/.config/nvim/init.vim ] || (mkdir -p ~/.config/nvim && ln -s $current_dir/init.vim ~/.config/nvim/init.vim)
 [ -h ~/.gitconfig ] || ln -s $current_dir/gitconfig ~/.gitconfig
 [ -h ~/.config/tmuxinator/crossbeam.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/crossbeam.yml ~/.config/tmuxinator/crossbeam.yml)
