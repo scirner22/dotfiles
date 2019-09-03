@@ -44,14 +44,14 @@ on_project_stop: cd ~/figure/code/dev-compose && docker-compose down
 
 windows:
   - figure-1-code:
-    - cd ~/figure/code
+    - cd ~/figure/code/processor-degree-verification
   - figure-1-console:
       layout: even-horizontal
       panes:
         - console:
-          - cd ~/figure/code
+          - cd ~/figure/code/processor-degree-verification
         - logs:
-          - cd ~/figure/code
+          - cd ~/figure/code/processor-degree-verification
   - figure-2-code:
     - cd ~/figure/code
   - figure-2-console:
@@ -70,6 +70,10 @@ windows:
           - cd ~/figure/code
         - logs:
           - cd ~/figure/code
+  - dotfiles:
+    - cd ~/figure/code/dotfiles
+  - dev-utils:
+    - cd ~/figure/code/dev-utils
   - startup:
     - cd ~/figure/code/dev-compose
     - git pull
