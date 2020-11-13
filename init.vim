@@ -22,6 +22,9 @@ Plug 'udalov/kotlin-vim'
 Plug 'posva/vim-vue'
 Plug 'isRuslan/vim-es6'
 
+" conquer of completetion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " rust
 " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 " TODO move back to official rust.vim once this pull request is merged
@@ -74,11 +77,12 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" rust
 autocmd BufReadPost *.rs setlocal filetype=rust
 set hidden
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
+\ 'rust': ['rust-analyzer'],
+\ }
 let g:LanguageClient_autoStart = 1
 nnoremap <silent> K :call LanguageClient_textDocument_hover()
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()
@@ -88,8 +92,7 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()
 " let g:racer_experimental_completer = 1
 " set completeopt-=preview
 
-set updatetime=250
-
+" generic
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -119,6 +122,28 @@ let g:rainbow_active = 1
 
 " docker
 :set backupcopy=yes
+
+" conquer of completion
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
 
 " TODO
 " non edit mode is showing relative line numbers instead of absolute
