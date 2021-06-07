@@ -14,8 +14,13 @@ printf "linking bash env config..."
 [ -h ~/.config/tmuxinator/crossbeam.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/crossbeam.yml ~/.config/tmuxinator/crossbeam.yml)
 [ -h ~/.config/tmuxinator/figure.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/figure.yml ~/.config/tmuxinator/figure.yml)
 [ -h ~/.config/tmuxinator/blockchain.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/blockchain.yml ~/.config/tmuxinator/blockchain.yml)
+[ -h ~/.config/alacritty/alacritty.yml ] || (mkdir -p ~/.config/alacritty && ln -s $current_dir/alacritty.yml ~/.config/alacritty/alacritty.yml)
+[ -h ~/.config/fish/config.fish ] || (mkdir -p ~/.config/fish && ln -s $current_dir/config.fish ~/.config/fish/config.fish)
 
 [ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# TODO install cargo
+# install rg
 
 printf "\nsetup complete!\n"

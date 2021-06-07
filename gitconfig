@@ -1,7 +1,22 @@
 [user]
 name = Stephen Cirner
 email = scirner@figure.com
+[ui "color"]
+	ui = always
+[color]
+	ui = true
+[pull]
+	ff = only
 [push]
 	default = simple
+[merge]
+	tool = nvim -d
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[github]
+	user = scirner
+[diff]
+	algorithm = patience
+	compactionHeuristic = true
+[init]
+	defaultBranch = main

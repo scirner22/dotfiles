@@ -19,7 +19,7 @@ on_project_start: ssh-add -K ~/.ssh/id_rsa
 # Run on project exit ( detaching from tmux session )
 # on_project_exit: command
 # Run on project stop
-on_project_stop: cd ~/figure/code/dev-compose && docker-compose down
+on_project_stop: cd ~/figure/code/p8e-docker-compose-newnet && ./bin/stop
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -43,53 +43,46 @@ on_project_stop: cd ~/figure/code/dev-compose && docker-compose down
 # post: tmux -CC attach -t figure
 
 windows:
-  - figure-1-code:
+  - p8e-code:
     - cd ~/figure/code/p8e
-  - figure-1-console:
+  - p8e-console:
       layout: even-horizontal
       panes:
-        - console:
+        - console-left:
           - cd ~/figure/code/p8e
-          - source dev-bin/env
           - sdk env
-        - logs:
-          - cd ~/figure/code/p8e
-          - source dev-bin/env
-          - sdk env
-  - figure-2-code:
-    - cd ~/figure/code/p8e/p8e-api
-  - figure-2-console:
+          - source ~/figure/code/p8e-docker-compose-newnet/env/host/env
+        - console-right:
+          - cd ~/figure/code/p8e/p8e-api
+  - object-store-code:
+    - cd ~/figure/code/object-store
+    - source bin/env
+  - object-store-console:
       layout: even-horizontal
       panes:
-        - console:
-          - cd ~/figure/code/p8e/p8e-api
-        - logs:
-          - cd ~/figure/code/p8e/p8e-api
-  - cross-cutter-code:
-    - cd ~/figure/code/provenance-object-store
-  - cross-cutter-console:
+        - console-left:
+          - cd ~/figure/code/object-store
+          - source bin/env
+        - console-right:
+          - cd ~/figure/code/object-store
+          - source bin/env
+  - contract-executor:
       layout: even-horizontal
       panes:
-        - console:
-          - cd ~/figure/code/provenance-object-store
-        - logs:
-          - cd ~/figure/code/provenance-object-store
+        - console-left:
+          - cd ~/figure/code/contract-executor
+          - source bin/env
+        - console-right:
+          - cd ~/figure/code/contract-executor
+  - p8e-docker-compose:
+      layout: even-horizontal
+      panes:
+        - console-left:
+          - cd ~/figure/code/p8e-docker-compose-newnet
+          - source bin/source
+        - console-right:
+          - cd ~/figure/code/p8e-docker-compose-newnet
   - dotfiles:
     - cd ~/personal/code/dotfiles
-  - blockchain:
-      layout: even-horizontal
-      panes:
-        - main:
-          - cd ~/figure/code/provenance-blockchain
-          - git pull
-          - source .envrc
-          - make build
-          - build/provenanced start
-        - api:
-          - cd ~/figure/code/provenance-blockchain
-          - sleep 20
-          - DEV=1 build/provenance api
-  - startup:
-    - cd ~/figure/code/dev-compose
-    - git pull
-    - docker-compose up -d object-store redis elasticsearch mailbox postgres
+  - extra:
+    - cd ~/figure/code

@@ -1,59 +1,88 @@
 Host *
   AddKeysToAgent yes
+  IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa
 
-Host crossbeam-bastion
-  Hostname bastion.getcrossbeam.com
-  User steve
-  Port 22
-  StrictHostKeyChecking no
-  PasswordAuthentication no
-  ForwardAgent yes
-  ServerAliveInterval 30
-  ServerAliveCountMax 3
-
-Host crossbeam-bastion-root
-  Hostname bastion.getcrossbeam.com
+Host bastion
+  Hostname ec2-3-234-94-154.compute-1.amazonaws.com
   User ubuntu
   Port 22
   StrictHostKeyChecking no
   PasswordAuthentication no
-  ForwardAgent yes
   ServerAliveInterval 30
   ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_treestaker.pem
 
-Host crossbeam-jenkins
-  Hostname jenkins.internal.getcrossbeam.com
+Host sentinel-1
+  Hostname ec2-54-243-127-104.compute-1.amazonaws.com
   User ubuntu
   Port 22
   StrictHostKeyChecking no
   PasswordAuthentication no
-  ForwardAgent yes
   ServerAliveInterval 30
   ServerAliveCountMax 3
-  ProxyCommand ssh crossbeam-bastion-root nc %h %p
+  IdentityFile ~/.ssh/aws_treestaker.pem
 
-Host crossbeam-haproxy
-  Hostname haproxy.internal.getcrossbeam.com
+Host sentinel-2
+  Hostname ec2-34-196-74-141.compute-1.amazonaws.com
   User ubuntu
   Port 22
   StrictHostKeyChecking no
   PasswordAuthentication no
-  ForwardAgent yes
   ServerAliveInterval 30
   ServerAliveCountMax 3
-  ProxyCommand ssh crossbeam-bastion nc %h %p
+  IdentityFile ~/.ssh/aws_treestaker.pem
 
-Host ansible-bastion-connection
-  HostName bastion.getcrossbeam.com
+Host sentinel-3
+  Hostname ec2-52-202-14-221.compute-1.amazonaws.com
   User ubuntu
   Port 22
-  ForwardAgent yes
-  ControlMaster auto
-  ControlPath ~/.ansible/cp/ansible-ssh-%h-%p-%r
-  ControlPersist 10m
-  IdentityFile ~/.ssh/id_rsa
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_treestaker.pem
 
-Host ansible-bastion-connection-reuse
-  ProxyCommand ssh ansible-bastion-connection nc %h %p
-  IdentityFile ~/.ssh/id_rsa
+Host private-sentinel-1
+  Hostname ip-10-0-0-60.ec2.internal
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_treestaker.pem
+  ProxyCommand ssh bastion nc %h %p
+
+Host private-sentinel-2
+  Hostname ip-10-0-1-109.ec2.internal
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_treestaker.pem
+  ProxyCommand ssh bastion nc %h %p
+
+Host validator
+  Hostname ip-10-0-1-241.ec2.internal
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_treestaker.pem
+  ProxyCommand ssh bastion nc %h %p
+
+Host tmkms
+  Hostname ip-10-0-0-226.ec2.internal
+  User ec2-user
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_treestaker.pem
+  ProxyCommand ssh bastion nc %h %p
