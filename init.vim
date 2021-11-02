@@ -30,7 +30,7 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'kien/ctrlp.vim'
 
 " terraform
-" Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform'
 
 " kotlin
 " Plug 'udalov/kotlin-vim'
@@ -46,6 +46,8 @@ Plug 'airblade/vim-gitgutter'
 
 " clojure
 Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-sexp',    {'for': 'clojure'}
+Plug 'liquidz/vim-iced', {'for': 'clojure'}
 " Plug 'tpope/vim-salve'
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-clojure-highlight'

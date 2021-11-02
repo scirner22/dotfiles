@@ -14,6 +14,8 @@ printf "linking bash env config..."
 [ -h ~/.config/tmuxinator/crossbeam.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/crossbeam.yml ~/.config/tmuxinator/crossbeam.yml)
 [ -h ~/.config/tmuxinator/figure.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/figure.yml ~/.config/tmuxinator/figure.yml)
 [ -h ~/.config/tmuxinator/blockchain.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/blockchain.yml ~/.config/tmuxinator/blockchain.yml)
+[ -h ~/.config/tmuxinator/p8e.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/p8e.yml ~/.config/tmuxinator/p8e.yml)
+[ -h ~/.config/tmuxinator/pay.yml ] || (mkdir -p ~/.config/tmuxinator && ln -s $current_dir/tmuxinator/pay.yml ~/.config/tmuxinator/pay.yml)
 [ -h ~/.config/alacritty/alacritty.yml ] || (mkdir -p ~/.config/alacritty && ln -s $current_dir/alacritty.yml ~/.config/alacritty/alacritty.yml)
 [ -h ~/.config/fish/config.fish ] || (mkdir -p ~/.config/fish && ln -s $current_dir/config.fish ~/.config/fish/config.fish)
 

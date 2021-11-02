@@ -1,0 +1,2 @@
+# TODO
+# add coc-settings.json to dotfiles
