@@ -9,6 +9,10 @@ Plug 'airblade/vim-rooter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'ycm-core/YouCompleteMe'
 
+" colors
+Plug 'EdenEast/nightfox.nvim'
+Plug 'ericbn/vim-solarized'
+
 " language server
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -29,8 +33,9 @@ Plug 'airblade/vim-gitgutter'
 " TODO remove mappings and add fzf mappings
 " Plug 'kien/ctrlp.vim'
 
-" terraform
+" devops
 Plug 'hashivim/vim-terraform'
+Plug 'towolf/vim-helm'
 
 " kotlin
 " Plug 'udalov/kotlin-vim'
@@ -43,11 +48,12 @@ Plug 'hashivim/vim-terraform'
 "Plug 'https://github.com/popravich/rust.vim.git', { 'branch': 'fix_syntastic_issue' }
 "Plug 'racer-rust/vim-racer'
 "Plug 'timonv/vim-cargo'
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 
 " clojure
-Plug 'tpope/vim-fireplace'
-Plug 'guns/vim-sexp',    {'for': 'clojure'}
-Plug 'liquidz/vim-iced', {'for': 'clojure'}
+Plug 'tpope/vim-fireplace', {'for': 'clojure'}
+Plug 'guns/vim-sexp',       {'for': 'clojure'}
+Plug 'liquidz/vim-iced',    {'for': 'clojure'}
 " Plug 'tpope/vim-salve'
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-clojure-highlight'
@@ -242,6 +248,18 @@ let g:python3_host_prog = '/Users/stephencirner/.pyenv/versions/3.9.1/bin/python
 " end python links
 "
 
+"
+" start terraform
+"
+
+" format on save
+let g:terraform_fmt_on_save=1
+" override to hashicorp style of 2 spaces for indentation level
+let g:terraform_align=1
+
+"
+" end terraform
+"
 
 
 
@@ -254,6 +272,10 @@ let g:python3_host_prog = '/Users/stephencirner/.pyenv/versions/3.9.1/bin/python
 set t_Co=256
 syntax on
 filetype plugin indent on
+
+set termguicolors
+set background=dark
+colorscheme solarized
 
 " let g:deoplete#enable_at_startup = 1
 

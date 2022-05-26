@@ -8,12 +8,22 @@ export FIGURE_CODE_DIR=${FIGURE_HOME_DIR}/code
 export FIGURE_DEV_DIR=${FIGURE_CODE_DIR}/dev-utils
 export CONFIG_HOME="~/Library/Application\ Support"
 
-export TESTNET_URI="tcp://rpc-0.test.provenance.io:26657"
-export MAINNET_URI="tcp://rpc-0.provenance.io:26657"
+export TESTNET_URI="https://rpc.test.provenance.io:443"
+export MAINNET_URI="https://rpc.provenance.io:443"
+
+export KUBE_SORT="--sort-by=.metadata.creationTimestamp"
+
+export OKTA_ORG_NAME="figure"
+export OKTA_BASE_URL="okta.com"
 
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$FIGURE_DEV_DIR/bin
+
+# configure libarchive
+export LDFLAGS="-L/usr/local/opt/libarchive/lib"
+export CPPFLAGS="-I/usr/local/opt/libarchive/include"
+export PKG_CONFIG_PATH=/usr/local/opt/libarchive/lib/pkgconfig
 
 #[ -f ~/.bash_ps_custom ] && . ~/.bash_ps_custom
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
@@ -37,12 +47,20 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
-export CLOUDSDK_PYTHON=python2
+# export CLOUDSDK_PYTHON=python2
+#
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/stephencirner/google-cloud-sdk/path.bash.inc' ]; then . '/Users/stephencirner/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/stephencirner/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/stephencirner/google-cloud-sdk/completion.bash.inc'; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/stephencirner/.sdkman"
 [[ -s "/Users/stephencirner/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/stephencirner/.sdkman/bin/sdkman-init.sh"
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

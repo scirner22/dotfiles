@@ -3,6 +3,38 @@ Host *
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa
 
+Host bastion-axelar
+  Hostname ec2-34-230-106-170.compute-1.amazonaws.com
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/axelar.pem
+
+Host validator-axelar
+  Hostname ip-10-0-11-90.ec2.internal
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/axelar.pem
+  ProxyCommand ssh bastion-axelar nc %h %p
+
+Host tmkms-axelar
+  Hostname ip-10-0-0-224.ec2.internal
+  User ec2-user
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/axelar.pem
+  ProxyCommand ssh bastion-axelar nc %h %p
+
 Host bastion
   Hostname ec2-3-234-94-154.compute-1.amazonaws.com
   User ubuntu
@@ -86,3 +118,56 @@ Host tmkms
   ServerAliveCountMax 3
   IdentityFile ~/.ssh/aws_treestaker.pem
   ProxyCommand ssh bastion nc %h %p
+
+Host bastion-axelar-mainnet
+  Hostname ec2-18-205-12-44.compute-1.amazonaws.com
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/axelar-mainnet.pem
+
+Host validator-axelar-mainnet
+  Hostname ip-10-0-11-203.ec2.internal
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/axelar-mainnet.pem
+  ProxyCommand ssh -W %h:%p bastion-axelar-mainnet
+
+Host tmkms-axelar-mainnet
+  Hostname ip-10-0-0-173.ec2.internal
+  User ec2-user
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/axelar-mainnet.pem
+  ProxyCommand ssh -W %h:%p bastion-axelar-mainnet
+
+Host demo-validator
+  Hostname ec2-54-149-156-221.us-west-2.compute.amazonaws.com
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_us_west_1.pem
+
+Host demo-tmkms
+  Hostname ip-10-0-0-149.us-west-2.compute.internal
+  User ec2-user
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_us_west_1.pem
+  ProxyCommand ssh -W %h:%p demo-validator
