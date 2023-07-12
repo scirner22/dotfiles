@@ -108,6 +108,17 @@ Host validator
   IdentityFile ~/.ssh/aws_treestaker.pem
   ProxyCommand ssh bastion nc %h %p
 
+Host validator-v2
+  Hostname ip-10-0-11-36.ec2.internal
+  User ubuntu
+  Port 22
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  IdentityFile ~/.ssh/aws_treestaker.pem
+  ProxyCommand ssh bastion nc %h %p
+
 Host tmkms
   Hostname ip-10-0-0-226.ec2.internal
   User ec2-user

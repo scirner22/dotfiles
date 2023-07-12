@@ -150,9 +150,9 @@ font:
     #style: Bold Italic
 
   # Point size
-  # size: 16.0
+  size: 16.0
   # size: 24.0
-  size: 28.0
+  # size: 28.0
   # size: 32.0
   # size: 48.0
 

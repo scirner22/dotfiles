@@ -38,7 +38,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'towolf/vim-helm'
 
 " kotlin
-" Plug 'udalov/kotlin-vim'
+Plug 'udalov/kotlin-vim'
 
 " javascript
 " Plug 'posva/vim-vue'
@@ -46,6 +46,7 @@ Plug 'towolf/vim-helm'
 
 " rust
 "Plug 'https://github.com/popravich/rust.vim.git', { 'branch': 'fix_syntastic_issue' }
+Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer'
 "Plug 'timonv/vim-cargo'
 Plug 'cespare/vim-toml', { 'branch': 'main' }
@@ -211,6 +212,9 @@ nmap <leader>f  <Plug>(coc-format-selected)
 "
 
 let g:ale_linters = {'rust': ['analyzer']}
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+let g:ale_fixers = {'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines']}
+let g:ale_fix_on_save = 1
 
 "
 " end ale
@@ -220,6 +224,7 @@ let g:ale_linters = {'rust': ['analyzer']}
 " start rust
 "
 
+let g:rustfmt_autosave = 1
 autocmd BufReadPost *.rs setlocal filetype=rust
 let g:LanguageClient_serverCommands = {
 \ 'rust': ['rust-analyzer'],

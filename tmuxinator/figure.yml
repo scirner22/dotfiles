@@ -19,7 +19,7 @@ on_project_start: ssh-add -K ~/.ssh/id_rsa
 # Run on project exit ( detaching from tmux session )
 # on_project_exit: command
 # Run on project stop
-on_project_stop: cd ~/figure/code/cap-table-ops && docker-compose down
+on_project_stop: cd ~/figure/code/exchange-ops && docker-compose down
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -43,38 +43,37 @@ on_project_stop: cd ~/figure/code/cap-table-ops && docker-compose down
 # post: tmux -CC attach -t figure
 
 windows:
+  - exchange-code:
+    - cd ~/figure/code/service-exchange
+  - exchange-console:
+      layout: even-horizontal
+      panes:
+        - left:
+          - cd ~/figure/code/service-exchange
+        - right:
+          - cd ~/figure/code/service-exchange
   - figure-1-code:
-    - cd ~/figure/code/provenance-cap-table
+    - cd ~/figure/code
   - figure-1-console:
       layout: even-horizontal
       panes:
-        - console:
-          - cd ~/figure/code/provenance-cap-table
-        - logs:
-          - cd ~/figure/code/provenance-cap-table
+        - left:
+          - cd ~/figure/code
+        - right:
+          - cd ~/figure/code
   - figure-2-code:
-    - cd ~/figure/code/processor-cap-table-report
+    - cd ~/figure/code
   - figure-2-console:
       layout: even-horizontal
       panes:
-        - console:
-          - cd ~/figure/code/processor-cap-table-report
-        - logs:
-          - cd ~/figure/code/processor-cap-table-report
-  - cross-cutter-code:
-    - cd ~/figure/code/cross-cutter
-  - cross-cutter-console:
-      layout: even-horizontal
-      panes:
-        - console:
-          - cd ~/figure/code/cross-cutter
-        - logs:
-          - cd ~/figure/code/cross-cutter
+        - left:
+          - cd ~/figure/code
+        - right:
+          - cd ~/figure/code
   - dotfiles:
     - cd ~/personal/code/dotfiles
   - dev-utils:
-    - cd ~/figure/code/dev-utils
-  - startup:
-    - cd ~/figure/code/cap-table-ops
+    - cd ~/figure/code/fig
+  - docker-compose:
+    - cd ~/figure/code/exchange-ops
     - git pull
-    - docker-compose up -d

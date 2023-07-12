@@ -12,13 +12,22 @@ export TESTNET_URI="https://rpc.test.provenance.io:443"
 export MAINNET_URI="https://rpc.provenance.io:443"
 
 export KUBE_SORT="--sort-by=.metadata.creationTimestamp"
+export KUBE_NODE_TAINTS="-o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints --no-headers"
+export KUBE_SORT_RESTART='--sort-by=".status.containerStatuses[0].restartCount"'
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 export OKTA_ORG_NAME="figure"
 export OKTA_BASE_URL="okta.com"
 
+export PIO_HOME="/Users/stephencirner/figure/code/provenance"
+
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$FIGURE_DEV_DIR/bin
+
+# exchange-ops
+export GAR_HOST=us-east1-docker.pkg.dev
+export GCR_PROJECT=figure-development
 
 # configure libarchive
 export LDFLAGS="-L/usr/local/opt/libarchive/lib"
@@ -46,6 +55,7 @@ fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.vector/bin:$PATH"
 
 # export CLOUDSDK_PYTHON=python2
 #
