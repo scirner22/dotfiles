@@ -1,11 +1,11 @@
 #!/bin/bash
+set -ex
 
 current_dir=$(pwd)
 
-printf "linking bash env config..."
-# [ -h ~/.bash_aliases ] || ln -s $current_dir/bash_aliases ~/.bash_aliases
+[ -h ~/.aliases ] || ln -s $current_dir/aliases ~/.aliases
 # [ -h ~/.bash_profile ] || ln -s $current_dir/bash_profile ~/.bash_profile
-# [ -h ~/.bash_ps_custom ] || ln -s $current_dir/bash_ps_custom ~/.bash_ps_custom
+[ -h ~/.git_prompt ] || ln -s $current_dir/git_prompt ~/.git_prompt
 [ -h ~/.tmux.conf ] || ln -s $current_dir/tmux.conf ~/.tmux.conf
 [ -h ~/.ssh/config ] || ln -s $current_dir/ssh_config ~/.ssh/config
 [ -h ~/.ideavimrc ] || ln -s $current_dir/ideavimrc ~/.ideavimrc
@@ -26,11 +26,21 @@ printf "linking bash env config..."
 
 cargo install ripgrep
 
+# install docker
 # install alacritty
 # install brew
+
+brew tap homebrew/cask-fonts
 
 brew install neovim
 brew install tmux
 brew install tmuxinator
+brew install font-noto-sans-mono
+brew install kubectx
+brew install node
 
-printf "\nsetup complete!\n"
+mkdir -p ~/.tmux
+[ -d ~/.tmux/kube-tmux ] || git clone https://github.com/jonmosco/kube-tmux ~/.tmux/kube-tmux
+
+# install go
+# curl -s "https://get.sdkman.io" | bash

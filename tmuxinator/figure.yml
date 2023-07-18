@@ -11,7 +11,7 @@ root: ~/
 
 # Project hooks
 # Runs on project start, always
-on_project_start: ssh-add -K ~/.ssh/id_rsa
+# on_project_start: ssh-add -K ~/.ssh/id_rsa
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
@@ -19,7 +19,7 @@ on_project_start: ssh-add -K ~/.ssh/id_rsa
 # Run on project exit ( detaching from tmux session )
 # on_project_exit: command
 # Run on project stop
-on_project_stop: cd ~/figure/code/exchange-ops && docker-compose down
+# on_project_stop: cd ~/code/figure/exchange-ops && docker-compose down
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -44,36 +44,36 @@ on_project_stop: cd ~/figure/code/exchange-ops && docker-compose down
 
 windows:
   - exchange-code:
-    - cd ~/figure/code/service-exchange
+    - cd ~/code/figure/service-exchange
   - exchange-console:
       layout: even-horizontal
       panes:
         - left:
-          - cd ~/figure/code/service-exchange
+          - cd ~/code/figure/service-exchange
         - right:
-          - cd ~/figure/code/service-exchange
+          - cd ~/code/figure/service-exchange
   - figure-1-code:
-    - cd ~/figure/code
+    - cd ~/code/figure
   - figure-1-console:
       layout: even-horizontal
       panes:
         - left:
-          - cd ~/figure/code
+          - cd ~/code/figure
         - right:
-          - cd ~/figure/code
+          - cd ~/code/figure
   - figure-2-code:
-    - cd ~/figure/code
+    - cd ~/code/figure
   - figure-2-console:
       layout: even-horizontal
       panes:
         - left:
-          - cd ~/figure/code
+          - cd ~/code/figure
         - right:
-          - cd ~/figure/code
+          - cd ~/code/figure
   - dotfiles:
-    - cd ~/personal/code/dotfiles
+    - cd ~/code/box_setup/dotfiles
   - dev-utils:
-    - cd ~/figure/code/fig
+    - cd ~/code/figure/fig
   - docker-compose:
-    - cd ~/figure/code/exchange-ops
+    - cd ~/code/figure/exchange-ops
     - git pull

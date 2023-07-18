@@ -3,9 +3,7 @@ alias ls='ls -G'
 alias pcert='openssl x509 -noout -text'
 
 # figure specific
-alias c='cd ~/figure/code'
-alias cfc='cd ~/figure/code'
-alias cpc='cd ~/personal/code'
+alias c='cd ~/code/figure'
 alias g='./gradlew'
 
 # crdb

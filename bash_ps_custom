@@ -1,4 +1,0 @@
-#function prompt_callback {
-#  echo "!!!"
-#  export GIT_PROMPT_END=" $(aws-prompt)\n$ "
-#}
