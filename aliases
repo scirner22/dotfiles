@@ -1,10 +1,12 @@
-# general
+# bash
 alias ls='ls -G'
 alias pcert='openssl x509 -noout -text'
 
-# figure specific
-alias c='cd ~/code/figure'
+# gradle
 alias g='./gradlew'
+
+# provenance
+alias c='cd ~/code/provenance'
 
 # crdb
 alias crdbcli='kubectl exec -it deployment/cockroachdb-client-secure -c cockroachdb-client-secure -- ./cockroach sql --certs-dir=/cockroach/cockroach-certs --host=cockroachdb-public'
@@ -22,3 +24,7 @@ alias terraform-fix='terraform providers lock -platform=darwin_amd64 -platform=l
 
 # git
 alias gdr="git diff -- . ':(exclude)**Cargo.lock'"
+alias gitclean='git fetch --prune && git branch -vv | grep '\'': gone]'\'' | grep -v '\''\*'\'' | awk '\''{ print $1; }'\'' | xargs -r git branch -D'
+
+# docker
+alias dc='docker-compose'

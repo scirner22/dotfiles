@@ -1,6 +1,6 @@
-# /home/stevecirner/.config/tmuxinator/figure.yml
+# /home/stevecirner/.config/tmuxinator/provenance.yml
 
-name: figure
+name: provenance
 root: ~/
 
 # Optional tmux socket
@@ -40,40 +40,55 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t figure
+# post: tmux -CC attach -t provenance
 
 windows:
-  - exchange-code:
-    - cd ~/code/figure/service-exchange
-  - exchange-console:
+  - placeholder-1: # 1
       layout: even-horizontal
       panes:
         - left:
-          - cd ~/code/figure/service-exchange
+          - cd ~/code/provenance
         - right:
-          - cd ~/code/figure/service-exchange
-  - figure-1-code:
-    - cd ~/code/figure
-  - figure-1-console:
+          - cd ~/code/provenance
+  - placeholder-2: # 2
       layout: even-horizontal
       panes:
         - left:
-          - cd ~/code/figure
+          - cd ~/code/provenance
         - right:
-          - cd ~/code/figure
-  - figure-2-code:
-    - cd ~/code/figure
-  - figure-2-console:
+          - cd ~/code/provenance
+  - placeholder-3: # 3
       layout: even-horizontal
       panes:
         - left:
-          - cd ~/code/figure
+          - cd ~/code/provenance
         - right:
-          - cd ~/code/figure
-  - dotfiles:
-    - cd ~/code/box_setup/dotfiles
-  - dev-utils:
-    - cd ~/code/figure/fig
-  - docker-compose:
-    - cd ~/code/figure/exchange-ops
-    - git pull
+          - cd ~/code/provenance
+  - placeholder-4: # 4
+      layout: even-horizontal
+      panes:
+        - left:
+          - cd ~/code/provenance
+        - right:
+          - cd ~/code/provenance
+  - placeholder-5: # 5
+    - cd ~/code/provenance
+  - placeholder-6: # 6
+    - cd ~/code/provenance
+  - dotfiles: # 7
+      layout: even-horizontal
+      panes:
+        - left:
+          - cd ~/code/box_setup/dotfiles
+        - right:
+          - cd ~/code/box_setup/dotfiles
+  - dev-cli-tools: # 8
+      layout: even-horizontal
+      panes:
+        - left:
+          - cd ~/code/provenance
+        - right:
+          - cd ~/code/provenance
+  - docker-compose: # 9
+    - cd ~/code/provenance
+    # - git pull

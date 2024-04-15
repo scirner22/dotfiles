@@ -31,6 +31,10 @@ foreground = "0xc0c5ce"
 
 [font]
 size = 16.0
+# larger sized font in cases where sharing screen
+# size = 28.0
+# size = 32.0
+# size = 36.0
 
 [font.normal]
 family = "Noto Sans Mono"

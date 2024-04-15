@@ -1,6 +1,6 @@
 [user]
 name = Stephen Cirner
-email = scirner@figure.com
+email = scirner@provenance.io
 [ui "color"]
 	ui = always
 [color]
@@ -9,6 +9,7 @@ email = scirner@figure.com
 	ff = only
 [push]
 	default = simple
+	autoSetupRemote = true
 [merge]
 	tool = nvim -d
 [url "git@github.com:"]
@@ -26,3 +27,5 @@ email = scirner@figure.com
 # avoid issues with cargo-edit
 [url "https://github.com/rust-lang/crates.io-index"]
   insteadOf = https://github.com/rust-lang/crates.io-index
+[core]
+	editor = nvim
